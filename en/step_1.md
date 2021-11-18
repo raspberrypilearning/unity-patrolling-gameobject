@@ -45,4 +45,4 @@ void Update()
     }
 ```
 
-![An animated gif showing a car GameObject moving left and right across the Game view.](images/car-patrol.png)
+![An animated gif showing a car GameObject moving left and right across the Game view.](images/car-patrol.gif)
