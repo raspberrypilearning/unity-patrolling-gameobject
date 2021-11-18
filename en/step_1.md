@@ -1,3 +1,5 @@
+![An animated gif showing a car GameObject moving left and right across the Game view.](images/car-patrol.gif)
+
 In the Inspector window for the GameObject, click ‘Add Component’ and choose **CharacterController**. Position and size the controller so it covers the whole of your patrolling GameObject.
 
 ![The Inspector window showing the Character Controller component.](images/char-coll-dog.png)
@@ -45,4 +47,4 @@ void Update()
     }
 ```
 
-![An animated gif showing a car GameObject moving left and right across the Game view.](images/car-patrol.gif)
+
