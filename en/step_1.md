@@ -35,12 +35,7 @@ void Update()
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         controller.SimpleMove(forward * patrolSpeed);
 
-        if (transform.position.x < maxPosition)
-        {
-            transform.Rotate(0, 180, 0); //turn around
-        }
-
-        if (transform.position.x > minPosition)
+        if (transform.position.x < minPosition || transform.position.x > maxPosition)
         {
             transform.Rotate(0, 180, 0); //turn around
         }
