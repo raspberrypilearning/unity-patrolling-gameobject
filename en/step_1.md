@@ -1,59 +1,48 @@
-## Introduction
+In the Inspector window for the GameObject, click ‘Add Component’ and choose **CharacterController**. Position and size the controller so it covers the whole of your patrolling GameObject.
 
-Add project description here. What will learners be making? Broadly what skills will they be learning?
+![The Inspector window showing the Character Controller component.](images/char-coll-dog.png)
 
-### What you will make
+![The Scene view showing the Dog GameObject with Character Collider highlighted around the frame of the Dog.](images/scene-coll-dog.png)
 
---- no-print ---
-Add instructions for interacting with the embedded content here.
+**Tip:** Press 'shift' + 'f' to focus on the patrolling GameObject in the Scene view .
 
-<div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/160619869/?autostart=false" frameborder="0"></iframe>
-</div>
---- /no-print ---
+Click on 'Add Component' and add a **Box Collider**. Adjust the Center Y and Size Y values so that other characters cannot walk through or climb on top of the patrolling GameObject:
 
---- print-only ---
-![Complete project](images/showcase_static.png)
---- /print-only ---
+![The Inspector window showing the Box Collider component with Cener Y and Size Y properties highlighted.](images/box-collider.png)
 
---- collapse ---
----
-title: What you will need
----
-### Hardware
+**Tip:** You will also need to add Box Colliders to the any other GameObjects that could move into the patrol area.
 
-+ A computer or tablet capable of running Scratch 3
+Click on 'Add Component' and add a ‘New script’ then give your script a sensible name.
 
-### Software
+Double-click on your new script to open it in the code editor.
 
-+ Scratch 3 (either [online](https://scratch.mit.edu/){:target="_blank"} or [offline](https://scratch.mit.edu/download){:target="_blank"})
-+ Python 3
-+ This project can be completed in a web browser using [trinket.io](https://trinket.io/)
+Add variables to control the patrol speed and patrol area:
 
-### Downloads
+```
+float patrolSpeed = 3.0F;
+float minPosition = -4.0F;
+float maxPosition = 4.0F;
+```
 
-+ Download the project [starter file](http://rpf.io/p/en/projectName-go){:target="_blank"} if working offline
+Add code to the 'Update()' method to make the patrolling GameObject move forward until it reaches the maxPosition then turn `180` degrees and move forward again until the minPosition is reached then turn `180` degrees:
 
---- /collapse ---
+```
+void Update()
+    {
+        CharacterController controller = GetComponent<CharacterController>();
+        Vector3 forward = transform.TransformDirection(Vector3.forward);
+        controller.SimpleMove(forward * patrolSpeed);
 
---- collapse ---
----
-title: What you will learn
----
+        if (transform.position.x < maxPosition)
+        {
+            transform.Rotate(0, 180, 0); //turn around
+        }
 
-+ Learning objective 1
-+ Learning objective 2
-+ Learning objective 3
+        if (transform.position.x > minPosition)
+        {
+            transform.Rotate(0, 180, 0); //turn around
+        }
+    }
+```
 
---- /collapse ---
-
---- collapse ---
----
-title: Additional information for educators
----
-
-You can download the completed project [here](http://rpf.io/p/en/projectName-get){:target="_blank"}.
-
-If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/projectName/print){:target="_blank"}.
-
---- /collapse ---
+![An animated gif showing a car GameObject moving left and right across the Game view.](images/car-patrol.png)
