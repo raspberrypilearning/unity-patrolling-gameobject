@@ -24,9 +24,11 @@ Add variables to control the patrol speed and patrol area:
 ---
 language: cs
 ---
+
 float patrolSpeed = 3.0f;
 float minPosition = -4.0f;
 float maxPosition = 4.0f;
+
 --- /code ---
 
 Add code to the 'Update()' method to make the patrolling GameObject move forward until it reaches the maxPosition then turn `180` degrees and move forward again until the minPosition is reached then turn `180` degrees:
@@ -35,6 +37,7 @@ Add code to the 'Update()' method to make the patrolling GameObject move forward
 ---
 language: cs
 ---
+    
     void Update()
     {
         CharacterController controller = GetComponent<CharacterController>();
@@ -52,6 +55,7 @@ language: cs
             transform.position = new Vector3(minPosition, transform.position.y, transform.position.z);
         }
     }
+    
 --- /code ---
 
 Setting the `transform.position` after turning makes sure that the NPC isn't still outside it's patrol bounds after turning around.
