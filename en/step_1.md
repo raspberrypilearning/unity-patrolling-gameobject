@@ -20,26 +20,38 @@ Double-click on your new script to open it in the code editor.
 
 Add variables to control the patrol speed and patrol area:
 
-```
-float patrolSpeed = 3.0F;
-float minPosition = -4.0F;
-float maxPosition = 4.0F;
-```
+--- code ---
+---
+language: cs
+---
+float patrolSpeed = 3.0f;
+float minPosition = -4.0f;
+float maxPosition = 4.0f;
+--- /code ---
 
 Add code to the 'Update()' method to make the patrolling GameObject move forward until it reaches the maxPosition then turn `180` degrees and move forward again until the minPosition is reached then turn `180` degrees:
 
-```
-void Update()
+--- code ---
+---
+language: cs
+---
+    void Update()
     {
         CharacterController controller = GetComponent<CharacterController>();
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         controller.SimpleMove(forward * patrolSpeed);
 
-        if (transform.position.x < minPosition || transform.position.x > maxPosition)
+        if (transform.position.x > maxPosition)
         {
-            transform.Rotate(0, 180, 0); //turn around
+            transform.Rotate(0, 180, 0);
+            transform.position = new Vector3(maxPosition, transform.position.y, transform.position.z);
+        }
+        else if (transform.position.x < minPosition)
+        {
+            transform.Rotate(0, 180, 0);
+            transform.position = new Vector3(minPosition, transform.position.y, transform.position.z);
         }
     }
-```
+--- /code ---
 
-
+Setting the `transform.position` after turning makes sure that the NPC isn't still outside it's patrol bounds after turning around.
