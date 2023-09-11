@@ -1,20 +1,20 @@
-![An animated gif showing a car GameObject moving left and right across the Game view.](images/car-patrol.gif)
+![An animated gif showing a Car GameObject moving left and right across the Game view.](images/car-patrol.gif)
 
-In the Inspector window for the GameObject, click ‘Add Component’ and choose **CharacterController**. Position and size the controller so it covers the whole of your patrolling GameObject.
+In the Inspector window for the GameObject, click **Add Component** and choose **Character Controller**. Position and size the controller so it covers the whole of your patrolling GameObject.
 
 ![The Inspector window showing the Character Controller component.](images/char-coll-dog.png)
 
 ![The Scene view showing the Dog GameObject with Character Collider highlighted around the frame of the Dog.](images/scene-coll-dog.png)
 
-**Tip:** Press 'shift' + 'f' to focus on the patrolling GameObject in the Scene view .
+**Tip:** Press <kbd>Shift</kbd>+<kbd>F</kbd> to focus on the patrolling GameObject in the Scene view.
 
-Click on 'Add Component' and add a **Box Collider**. Adjust the Center Y and Size Y values so that other characters cannot walk through or climb on top of the patrolling GameObject:
+Click on **Add Component** and add a **Box Collider**. Adjust the Center y and Size y values so that other characters cannot walk through or climb on top of the patrolling GameObject:
 
-![The Inspector window showing the Box Collider component with Cener Y and Size Y properties highlighted.](images/box-collider.png)
+![The Inspector window showing the Box Collider component with Center y and Size y properties highlighted.](images/box-collider.png)
 
-**Tip:** You will also need to add Box Colliders to the any other GameObjects that could move into the patrol area.
+**Tip:** You will also need to add Box Colliders to any other GameObjects that could move into the patrol area.
 
-Click on 'Add Component' and add a ‘New script’ then give your script a sensible name.
+Click on **Add Component** and add a **New script**, then give your script a sensible name.
 
 Double-click on your new script to open it in the code editor.
 
@@ -31,7 +31,7 @@ float maxPosition = 4.0f;
 
 --- /code ---
 
-Add code to the 'Update()' method to make the patrolling GameObject move forward until it reaches the maxPosition then turn `180` degrees and move forward again until the minPosition is reached then turn `180` degrees:
+Add code to the 'Update()' method to make the patrolling GameObject move forward until it reaches the maxPosition then turn `180` degrees and move forward again until the minPosition is reached, then turn `180` degrees:
 
 --- code ---
 ---
@@ -58,4 +58,4 @@ language: cs
     
 --- /code ---
 
-Setting the `transform.position` after turning makes sure that the NPC isn't still outside it's patrol bounds after turning around.
+Setting the `transform.position` after turning makes sure that the NPC isn't outside its patrol bounds after turning around.
