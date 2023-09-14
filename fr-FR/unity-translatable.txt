@@ -1,6 +1,6 @@
-patrolSpeed
+patrouilleurVitesse
 
-minPosition
+positionMin
 
-maxPosition
+positionMax
 
