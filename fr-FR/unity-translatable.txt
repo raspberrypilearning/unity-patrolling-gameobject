@@ -1,0 +1,6 @@
+patrouilleurVitesse
+
+positionMin
+
+positionMax
+
