@@ -1,24 +1,24 @@
-![An animated gif showing a Car GameObject moving left and right across the Game view.](images/car-patrol.gif)
+![Een gif die een Car GameObject laat zien dat naar links en rechts beweegt over de Spel weergave.](images/car-patrol.gif)
 
-In the Inspector window for the GameObject, click **Add Component** and choose **Character Controller**. Position and size the controller so it covers the whole of your patrolling GameObject.
+Klik in het Inspector venster voor het GameObject op **Add Component** en kies **Character Controller**. Plaats en stel de grootte in van de controller zodat deze het hele patrouillerende GameObject bedekt.
 
-![The Inspector window showing the Character Controller component.](images/char-coll-dog.png)
+![Het Inspector venster met de Character Controller-component.](images/char-coll-dog.png)
 
-![The Scene view showing the Dog GameObject with Character Collider highlighted around the frame of the Dog.](images/scene-coll-dog.png)
+![De Scèneweergave toont het Dog GameObject met Character Collider gemarkeerd rond het frame van de Hond.](images/scene-coll-dog.png)
 
-**Tip:** Press <kbd>Shift</kbd>+<kbd>F</kbd> to focus on the patrolling GameObject in the Scene view.
+**Tip:** Druk op <kbd>Shift</kbd>+<kbd>F</kbd> om scherp te stellen op het patrouillerende GameObject in de Scèneweergave.
 
-Click on **Add Component** and add a **Box Collider**. Adjust the Center y and Size y values so that other characters cannot walk through or climb on top of the patrolling GameObject:
+Klik op **Add Component** en voeg een **Box Collider**toe. Pas de waarden Center y en Size y aan zodat andere personages niet door het patrouillerende GameObject kunnen lopen of er bovenop kunnen klimmen:
 
-![The Inspector window showing the Box Collider component with Center y and Size y properties highlighted.](images/box-collider.png)
+![Het Inspector-venster met de Box Collider-component met de eigenschappen Center y en Size y gemarkeerd.](images/box-collider.png)
 
-**Tip:** You will also need to add Box Colliders to any other GameObjects that could move into the patrol area.
+**Tip:** Je moet ook Box Colliders toevoegen aan andere GameObjects die in het patrouillegebied kunnen bewegen.
 
-Click on **Add Component** and add a **New script**, then give your script a sensible name.
+Klik op **Add Component** en voeg een **New script**toe, geef vervolgens je script een logische naam.
 
-Double-click on your new script to open it in the code editor.
+Dubbelklik op het nieuwe script om het te openen in de code-editor.
 
-Add variables to control the patrol speed and patrol area:
+Voeg variabelen toe om de snelheid van de patrouille en het patrouillegebied te regelen:
 
 --- code ---
 ---
@@ -29,7 +29,7 @@ float patrolSpeed = 3.0f; float minPosition = -4.0f; float maxPosition = 4.0f;
 
 --- /code ---
 
-Add code to the 'Update()' method to make the patrolling GameObject move forward until it reaches the maxPosition then turn `180` degrees and move forward again until the minPosition is reached, then turn `180` degrees:
+Voeg code toe aan de 'Update()'-methode om het patrouillerende GameObject te laten bewegen totdat het de maxPosition bereikt, draai dan `180` graden en laat het GameObject opnieuw bewegen totdat de minPosition is bereikt, draai dan `180` graden:
 
 --- code ---
 ---
@@ -56,4 +56,4 @@ language: cs
 
 --- /code ---
 
-Setting the `transform.position` after turning makes sure that the NPC isn't outside its patrol bounds after turning around.
+Door de `transform.position` in te stellen na het draaien, zorg je ervoor dat de NPC zich na het omdraaien niet buiten zijn patrouillegrenzen bevindt.
