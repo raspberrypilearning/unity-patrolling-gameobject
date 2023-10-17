@@ -8,13 +8,13 @@ Klik in het Inspector venster voor het GameObject op **Add Component** en kies *
 
 **Tip:** Druk op <kbd>Shift</kbd>+<kbd>F</kbd> om scherp te stellen op het patrouillerende GameObject in de Scèneweergave.
 
-Klik op **Add Component** en voeg een **Box Collider**toe. Pas de waarden Center y en Size y aan zodat andere personages niet door het patrouillerende GameObject kunnen lopen of er bovenop kunnen klimmen:
+Klik op **Add Component** en voeg een **Box Collider** toe. Pas de waarden Center y en Size y aan zodat andere personages niet door het patrouillerende GameObject kunnen lopen of er bovenop kunnen klimmen:
 
 ![Het Inspector-venster met de Box Collider-component met de eigenschappen Center y en Size y gemarkeerd.](images/box-collider.png)
 
 **Tip:** Je moet ook Box Colliders toevoegen aan andere GameObjects die in het patrouillegebied kunnen bewegen.
 
-Klik op **Add Component** en voeg een **New script**toe, geef vervolgens je script een logische naam.
+Klik op **Add Component** en voeg een **New script** toe, geef vervolgens je script een logische naam.
 
 Dubbelklik op het nieuwe script om het te openen in de code-editor.
 
