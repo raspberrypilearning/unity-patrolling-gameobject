@@ -1,0 +1,6 @@
+PatrolSpeed
+
+minPosition
+
+maxPosition
+
